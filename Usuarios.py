@@ -5,7 +5,6 @@ class Usuarios(object):
     def __init__(self, idusuario = 0, nome = '', telefone = '', email = '', senha = ''):
         self.idusuario = idusuario
         self.nome = nome
-        self.telefone = telefone
         self.email = email
         self.senha = senha
 
