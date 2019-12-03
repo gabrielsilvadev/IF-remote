@@ -61,11 +61,7 @@ class Banco(): #objeto onde contem os atribultos ouseja funcoes que contem tabel
     def cadastro_prof(self, nome, email, senha):
         try:
             ini = self.conexao.cursor()
-            ini.execute("INSERT INTO cadastro(nome, email, senha)"
-                        "values ('" + nome + '\n' "',"
-                                 '' + email + '\n' "','"
-                                 '' + senha + '\n' "'"
-                                ")")
+            ini.execute("INSERT INTO cadastro(nome, email, senha) values ('" + nome + "', '" + email + "', '" + senha + "')");
             self.conexao.commit()
             print("ok")
             ini.close()
