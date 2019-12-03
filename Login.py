@@ -11,7 +11,7 @@ logo = PhotoImage(file = "Imagens\lgr.png") # Importa imagem
 logo = logo.subsample(10,10) # Redimensiona o tamanho
 logo1 = Label(janela, image = logo, background = "#321b4a") # Atribui um espaço para alocação da mesma na tela
 logo1.place(x = 300, y = 50) # Aloca no espaço desejado na tela
-#logo.configure(background = "#321b4a") # Cor de fundo
+logo.configure(background = "#321b4a") # Cor de fundo
 
 #VARIÁVEIS NA TELA
 lb1 = Label(janela, text = "Login:", font =("Times New Roman", "15", "bold"), bg = corbg, foreground = "white") # Espaço para variáveis de nome
