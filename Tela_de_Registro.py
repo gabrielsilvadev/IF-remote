@@ -1,10 +1,9 @@
 from tkinter import *
-from Banco import Banco
+from Banco import *
 
 corbg = "#321b4a"
 corbt = "#Cb6121"
 
-banco = Banco()
 janela = Tk() # Inicializa o Tkinter
 
 #FUNDO - BACKGROUND
@@ -40,11 +39,10 @@ ent4.place(x = 310, y = 300) # Aloca a caixa de texto no espaço desejado
 ent5.place(x = 310, y = 355) # Aloca a caixa de texto no espaço desejado
 
 def cadastro_usuario():
-    banco = Banco()
-    banco.cadastro_prof(ent1.get(), ent2.get(), ent4.get())
-
+     if 
+       cadastro_prof(ent1.get(), ent2.get(), ent4.get())
 # BOTÃO
-bt = Button(janela, text = "Registrar-se", font = ("Times new roman", "10", "bold"), bg = corbt, foreground = "white", command=cadastro_usuario()) # Adiciona um botão
+bt = Button(janela, text = "Registrar-se", font = ("Times new roman", "10", "bold"), bg = corbt, foreground = "white", command=cadastro_usuario) # Adiciona um botão
 bt.place(x = 400, y = 450) # Aloca o botão no espaço desejado na tela
 
 janela.geometry("800x600+0+0") # Dimensão da tela 
