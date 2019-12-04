@@ -5,7 +5,6 @@ corbg = "#321b4a"
 corbt = "#Cb6121"
 
 janela = Tk() # Inicializa o Tkinter
-
 #IMAGEM
 logo = PhotoImage(file = "Imagens\lgr.png") # Importa imagem
 logo = logo.subsample(10,10) # Redimensiona o tamanho
