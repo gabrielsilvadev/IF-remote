@@ -41,7 +41,7 @@ def cadastro_usuario():
       if nome and email and senha:
             cadastro_prof(ent1.get(), ent2.get(), ent3.get())
             from Janela import Janela
-  
+            
       else:
          msn = Label(janela, text = "preencha todos os dados")
          msn.pack(side=TOP)

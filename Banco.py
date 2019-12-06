@@ -1,28 +1,25 @@
 import sqlite3 # importando o banco 
-import Login
+import Janela
+
 def cadastro_prof(nome, email, senha):
-          ini = conexao.cursor()
-          ini.execute('''INSERT INTO cadastro(nome, email, senha)
-                        VALUES (?,?,?)''', (nome, email, senha))
-          conexao.commit()
-          print("ok")
-          ini.close()
-          return "usuario cadastrado com sucesso"
+        ini = conexao.cursor()
+        ini.execute('''INSERT INTO cadastro(nome, email, senha)
+                VALUES (?,?,?)''', (nome, email, senha))
+        conexao.commit()
+        print("ok")
+        ini.close()
+        return "usuario cadastrado com sucesso"
 
         
-def login( email, senha):
-
-       # user=[]
-            c = conexao.cursor()
-            c.execute("select * from cadastro ")
-            for linha in c:
-                if email==linha[1] and senha==linha[2]:
-               # user.append(linha[1])
-               # user.append(linha[2])
-                        print("deu")
-                        c.close()
+def login(email, senha):
+        c = conexao.cursor()
+        c.execute("select * from cadastro where email='" + email + "'")
+        for linha in c:
+                if senha == linha[3]:
+                        return True                        
                 else:
                         print("erro")
+        c.close()
             
 
 conexao = sqlite3.connect('banco.db') #conexao com o data base 
