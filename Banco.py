@@ -1,5 +1,5 @@
 import sqlite3 # importando o banco 
-
+import Login
 def cadastro_prof(nome, email, senha):
           ini = conexao.cursor()
           ini.execute('''INSERT INTO cadastro(nome, email, senha)
@@ -11,19 +11,19 @@ def cadastro_prof(nome, email, senha):
 
         
 def login( email, senha):
-        user=[]
-        try:
-            c = conexao.cursor()
-            c.execute("select * from cadastro where email = '" + email + "' and senha = '" + senha + "'")
-            for linha in c:
-                user.append(linha[0])
-                user.append(linha[2])
-            c.close()
-            print('acesso ativo')
-            return user
-        except:
-            return 'acesso negado'
 
+       # user=[]
+            c = conexao.cursor()
+            c.execute("select * from cadastro ")
+            for linha in c:
+                if email==linha[1] and senha==linha[2]:
+               # user.append(linha[1])
+               # user.append(linha[2])
+                        print("deu")
+                        c.close()
+                else:
+                        print("erro")
+            
 
 conexao = sqlite3.connect('banco.db') #conexao com o data base 
 c = conexao.cursor() #iniciando a conexao da tabelas em si 
