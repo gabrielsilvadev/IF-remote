@@ -45,7 +45,9 @@ def TelaLogin():
       ent2.place(x = 280, y = 405) # Aloca a caixa de texto no espaço 
 
       def verificar():
-            if login(ent1.get(), ent2.get()):
+            nomeu = login(ent1.get(), ent2.get())
+            
+            if nomeu:
                   global chamarlogin
                   chamarlogin = True
                   print("Recebeu True")
@@ -53,7 +55,7 @@ def TelaLogin():
                   
             else:
                   print("e")
-
+            
       def cadastro():
             registro()
 
@@ -69,8 +71,9 @@ def TelaLogin():
       root['background']="#321b4a"
       root.mainloop() # Roda a tela
 
-
+      
 def janela():
+    
     janela = Tk()
     a = ["Mini auditorio","Auditorio","Lab 1","Lab 2","Lab 3","Lab 4","Lab 5 ","Sala de leitura","Quadra","Matematica"] # cria lista 
     #a = banco.return_salas() #retorna a lista de salas do banco 
@@ -86,7 +89,7 @@ def janela():
     mini = mini.subsample(8,8)#faz o dimensionamento 
 
     usuario = PhotoImage(file = r"blank-profile-picture-973460_1280.png") # importa a imagem do usuario  
-    usuario = usuario.subsample(18,18)#dimensiona 
+    usuario = usuario.subsample(25,25)#dimensiona 
 
     button_do_usuario=Button(janela,background="#CB6121",image=usuario)#butao do usuario que esta recebendo  a imagem 
     button_do_usuario['font']=("Arial","8")# regulando a fonte 
@@ -96,7 +99,7 @@ def janela():
     button_do_usuario.place(x = 15, y = 15)# dimensionamento do butao 
 
     #texto que fica sobre o butao 
-    text2=Label(janela,text="Usuario",background="#321B4A",foreground='white')
+    text2=Label(janela,text=nome,background="#321B4A",foreground='white')
     text2['padx']=20
     text2['pady']=3
     text2['font']=("Arial","8",'bold')

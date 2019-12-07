@@ -14,11 +14,17 @@ def cadastro_prof(nome, email, senha):
 def login(email, senha):
         c = conexao.cursor()
         c.execute("select * from cadastro where email='" + email + "'")
-        for linha in c:
-                if senha == linha[3]:
-                        return True                        
-                else:
-                        print("erro")
+        dados = c.fetchall()
+        for linha in dados:
+                print(linha)
+                for elem in linha:
+                        
+                    if senha == linha[3] and email== linha[2]:
+                            nome=linha[1]
+                            print(nome)
+                            return nome                       
+                    else:
+                            print("erro")
         c.close()
             
 
