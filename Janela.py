@@ -1,7 +1,9 @@
 from tkinter import *
 from Banco import * #importando o aquivo banco e suas class
+from PIL import Image
 
-def test(janela):
+def janela():
+    janela = Tk()
     a = ["Mini auditorio","Auditorio","Lab 1","Lab 2","Lab 3","Lab 4","Lab 5 ","Sala de leitura","Quadra","Matematica"] # cria lista 
     #a = banco.return_salas() #retorna a lista de salas do banco 
 
@@ -195,6 +197,6 @@ def test(janela):
 
     janela.geometry('800x600+0+0')#dimensionando na tela 
     janela['background']='#321b4a'#configurando a cor de fundo 
-    janela.mainloop()# criando laco para manter a tela aberta 
+    janela.mainloop()# criando laco para manter a tela aberta
 
 

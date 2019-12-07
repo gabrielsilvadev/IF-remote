@@ -1,5 +1,5 @@
 import sqlite3 # importando o banco 
-import Janela
+
 
 def cadastro_prof(nome, email, senha):
         ini = conexao.cursor()
